@@ -9,8 +9,12 @@
 
     <title>@yield('title', 'Portolio')</title>
 
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/custom.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,19 +22,23 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow sticky-top">
+    <div class="page-container page-container-dark"></div>
+
+    <nav class="navbar navbar-expand-md navbar-dark border-bottom bg-dark shadow-lg sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand m-2 ms-3">
-                <i class="fa-solid fa-laptop-code"></i>
-                @yield('title')
-            </a>
+            <div class="navbar-brand">
+                <h1 class="ms-3">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <span class="mx-2">@yield('title')</span>
+                </h1>
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                 <!-- Right Side Of Navbar -->
@@ -56,8 +64,8 @@
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
 
@@ -67,16 +75,34 @@
                             </div>
                         </li>
                     @endguest
-                    <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('projects') }}">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link @if( Request::route()->getName() == 'home' ){{'active'}}@endif" href="{{ route('home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link @if( Request::route()->getName() == 'about' ){{'active'}}@endif" href="{{ route('about') }}">About</a></li>
+                    <li class="nav-item"><a class="nav-link @if( Request::route()->getName() == 'projects' ){{'active'}}@endif" href="{{ route('projects') }}">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link @if( Request::route()->getName() == 'contact' ){{'active'}}@endif" href="{{ route('contact') }}">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <main class="py-4">
+    <main class="container my-4">
         @yield('content')
     </main>
+    <div id="footer_flow"></div>
+    <footer id="footer" class="border-top bg-dark shadow-lg fixed-bottom">
+
+        <div class="my-2 w-100 row mx-auto">
+
+            <div class="col-12 col-md-8 d-flex align-items-center">
+                <span class="text-muted"></span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex display-6">
+                <li class="ms-3"><a class="text-light" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li class="ms-3"><a class="text-light" href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                <li class="ms-3"><a class="text-light" href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+            </ul>
+
+        </div>
+
+    </footer>
 </body>
 </html>
