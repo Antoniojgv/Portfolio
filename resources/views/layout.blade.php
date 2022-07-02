@@ -19,7 +19,6 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow sticky-top">
