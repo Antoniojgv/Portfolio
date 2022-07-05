@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Skills;
+use App\Models\Skill;
 use Illuminate\Http\Request;
 
-class SkillsController extends Controller
+class SkillController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class SkillsController extends Controller
      */
     public function index()
     {
-        $skills = Skills::all();
+        $skills = Skill::all();
         return response()->json($skills);
     }
 
@@ -42,7 +42,7 @@ class SkillsController extends Controller
             'percent' => 'min:0|max:100'
         ]);
 
-        $newSkill = new Skills([
+        $newSkill = new Skill([
             'skillName' => $request->get('skillName'),
             'percent' => $request->get('percent'),
         ]);
@@ -61,7 +61,7 @@ class SkillsController extends Controller
      */
     public function show($id)
     {
-        $skill = Skills::findOrFail($id);
+        $skill = Skill::findOrFail($id);
         return response()->json($skill);
     }
 
@@ -96,7 +96,7 @@ class SkillsController extends Controller
      */
     public function destroy($id)
     {
-        $skill = Skills::findOrFail($id);
+        $skill = Skill::findOrFail($id);
         $skill->delete();
         return response()->json($skill::all());
     }

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\API\SkillsController;
+use App\Http\Controllers\API\SkillController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,4 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('skills', SkillsController::class)->except(['store','update','destroy']);
+Route::apiResource('skill', SkillController::class)->except(['store','update','destroy']);
