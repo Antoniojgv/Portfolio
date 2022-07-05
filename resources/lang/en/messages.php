@@ -1,5 +1,6 @@
 <?php
 
 return [
-   "soy"=>"i'm"
+   "soy"=>"i'm",
+   "descripciones" => "Web programmer, web builder, Sports trainer, Airsoft player, Larper"
 ];

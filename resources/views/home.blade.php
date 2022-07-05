@@ -7,7 +7,8 @@
 
 @include('partials.hero')
 
-<main id="main">
+
+<main id="main" class="d-none">
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">

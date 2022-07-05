@@ -12,6 +12,11 @@
             <li><a href="#portfolio" class="nav-link scrollto"><i class="fa-solid fa-file"></i><span>Portfolio</span></a></li>
             <li><a href="#services" class="nav-link scrollto"><i class="fa-solid fa-server"></i><span>Services</span></a></li>
             <li><a href="#contact" class="nav-link scrollto"><i class="fa-solid fa-address-card"></i><span>Contact</span></a></li>
+            @if( \Session::get('language') == 'es' )
+            <li><a href="{{ route('changeLanguage') }}?language=en" class="nav-link bg-secondary text-light">EN<span>Translate to English</span></a></li>
+            @else
+            <li><a href="{{ route('changeLanguage') }}?language=es" class="nav-link bg-secondary text-light">ES<span>Traducir a Castellano</span></a></li>
+            @endif
         </ul>
     </nav>
 
