@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\ContactMailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +17,7 @@ use App\Http\Controllers\LanguageController;
 */
 
 Route::view('/', 'home')->name('home');
-
-//Route::get('view', [LanguageController::class, 'view'])->name('view');
+Route::post('/',[ContactController::class, 'store']);
 Route::get('language-change', [LanguageController::class, 'changeLanguage'])->name('changeLanguage');
+
 

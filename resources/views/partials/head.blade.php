@@ -11,10 +11,12 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="assets/img/favicon.ico" rel="icon">
+    <link href="assets/img/favicon.ico" rel="apple-touch-icon">
+    <!--<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -30,16 +32,5 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
-
-</head>
-
-
-
-
-
-
-
-
-
 
 </head>
