@@ -13,7 +13,7 @@ class ContactController extends Controller
 
         $validated = $request->validated();
 
-        Mail::to('antoniojesusgv@gmail.com','Portfolio')->send(new ContactMail($validated));
+        Mail::to(env(USER_EMAIL),'Portfolio')->send(new ContactMail($validated));
 
         return view('home');
 
