@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
 use App\Mail\ContactMail;
-use Mail;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
 
 class ContactController extends Controller
 {
@@ -13,9 +14,12 @@ class ContactController extends Controller
 
         $validated = $request->validated();
 
-        Mail::to(env(USER_EMAIL),'Portfolio')->send(new ContactMail($validated));
+        //testing
+        //return new ContactMail($validated);
 
-        return view('home');
+        Mail::to(env('USER_EMAIL'))->queue(new ContactMail($validated));
+
+        return Redirect::back()->with(["success" => __("messages.contact_success")]);
 
     }
 

@@ -133,11 +133,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@media (min-width: 992px) {
-  #main {
-    margin-left: 100px;
-  }
-}
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -874,6 +869,21 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+.contact{
+    background: url(../img/contact-background.jpg) top center no-repeat;
+    width: 100%;
+    background-size: cover;
+    position: relative;
+}
+.contact:before {
+    content: "";
+    background: #333A;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
 .contact .info {
   width: 100%;
 }
@@ -895,13 +905,13 @@ section {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #45505b;
+  color: #fff;
 }
 .contact .info p {
   padding: 0 0 0 60px;
   margin-bottom: 0;
   font-size: 14px;
-  color: #728394;
+  color: #fff;
 }
 .contact .info .email, .contact .info .phone {
   margin-top: 40px;
