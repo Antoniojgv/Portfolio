@@ -1,8 +1,6 @@
 <!-- ======= Footer ======= -->
 <footer id="footer">
     <div class="container">
-        <h3>{{ env('USER_NAME') }}</h3>
-        <p></p>
         <div class="social-links">
             @include('partials.socialLinks')
         </div>
