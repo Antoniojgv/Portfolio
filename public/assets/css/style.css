@@ -866,6 +866,31 @@ section {
   }
 }
 
+
+/*--------------------------------------------------------------
+# Coindesk
+--------------------------------------------------------------*/
+.coindesk{}
+.coindesk-bg{}
+.coindesk-item{}
+.coindesk-title{
+    font-size: 22px;
+    font-weight: 600;
+    color: #36a100;
+}
+.coindesk-content{
+    font-size: 18px;
+    color: #333;
+}
+.coindesk-disclaimer{
+    text-align: center;
+    font-style: italic;
+}
+.coindesk-disclaimer p{
+    margin:0;
+    padding: 0;
+}
+
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/

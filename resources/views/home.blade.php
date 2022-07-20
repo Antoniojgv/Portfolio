@@ -566,6 +566,9 @@
       </div>
     </section><!-- End Testimonials Section -->
 
+    <!-- ======= API data show ======= -->
+    @include('partials.coindesk')
+
     @include('contact')
 </main><!-- End #main -->
 
