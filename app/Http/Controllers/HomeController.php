@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Resume;
 use App\Models\Skill;
 use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Client;
+use GuzzleHttp\Promise;
 
 class HomeController extends Controller
 {
